@@ -1,16 +1,25 @@
-// lay out input element and button element
+// grab input, button, and alert element
 const inputEl = document.querySelector(".measure");
 const buttonEl = document.querySelector(".converter");
+const alertEl = document.querySelector(".alert");
 
 // grabbing elements that contain output values that need to be updated once conversion happens
-const usrVal = document.querySelectorAll(".usr-val")
-const firstConv = document.querySelectorAll(".first-conv")
-const secondConv = document.querySelectorAll(".second-conv")
+const usrVal = document.querySelectorAll(".usr-val");
+const firstConv = document.querySelectorAll(".first-conv");
+const secondConv = document.querySelectorAll(".second-conv");
 
 // functionality for our convertor button
 buttonEl.addEventListener("click", function() {
     // convert the string the user inputs into a #
-    const numberToConvert = Number(inputEl.value)
+    const numberToConvert = Number(inputEl.value);
+    
+    // check if userInput is valid # - if so display alert & end fxn, if not, hide alert
+    if (isNaN(numberToConvert)) {
+        alertEl.hidden = false;
+        return;
+    } else {
+        alertEl.hidden = true;
+    }
 
     // update output spans to contain the # we're converting from
     usrVal.forEach((value) => {
@@ -40,4 +49,8 @@ function outputTextContentConverter(numberToConvert, output, isImpToMetric) {
             value.textContent = `${(numberToConvert * massConvFactor).toFixed(3)}`
         }
     })
+}
+
+function errorDisplay() {
+
 }
