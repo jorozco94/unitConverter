@@ -67,6 +67,13 @@ input {
     padding: var(--std-button-padding)
 }
 
+.alert {
+    color: rgb(255, 8, 8);
+    font-weight: bold;
+    font-size: .8em;
+    padding-bottom: var(--std-button-padding)
+}
+
 button {
     border: none;
     padding: var(--std-button-padding) calc(var(--std-button-padding) * 1.5);
