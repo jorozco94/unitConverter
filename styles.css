@@ -26,14 +26,14 @@
     --subheading-color: #5A537B;
 }
 
-#container {
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: var(--app-width);
 }
 
-#top-cont {
+.top-cont {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,7 +63,7 @@ button {
     margin-bottom: var(--std-margin);
 }
 
-#bottom-cont {
+.bottom-cont {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,7 +72,7 @@ button {
     width: var(--app-width);
 }
 
-#bottom-cont h2 {
+.bottom-cont h2 {
     color: var(--subheading-color);
     font-size: var(--subheading-font-size);
 }
