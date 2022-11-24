@@ -1,20 +1,13 @@
 # Unit Converter
 
-Part of the "Making Websites Interactive" Module of Scrimba's frontend developer career path, the Unit Converter was a neat little self-directed project I put together.
+A simple unit converting application that allows users to go from metric to imperial and vice versa.
 
-In terms of improvements that could be made, I definitely took a brute force approach to the conversions in the js file and I would like to go back and refactor to be a bit more DRY friendly once I have a spare moment. 
+## How It Works
 
-## Supporting Scrimba
+1. Users can input a numerical value into the input field
 
-Since 2017, we have created over 20 free courses on Scrimba, and we're going to
-continue launching free courses. But to pay our bills, we have to charge once
-in a while. So if you've ever wanted to "give back" to Scrimba, you can do that by buying
-	one of our paid courses
+2. Press the "Convert" button
 
-- [Become a professional React developer](https://scrimba.com/course/greact)
-- [The Responsive Web Design Bootcamp](https://scrimba.com/course/gresponsive)
-- [The Ultimate JavaScript Bootcamp](https://scrimba.com/course/gjavascript)
+3. See the resulting conversions under 3 categories (Length, Volume, and Mass) in the bottom half of the application.
 
-	It would also mean the world to us if you share the courses.  
-
-Happy Coding!
+NOTE: The units of the input don't matter because the conversion takes care of converting from metric to imperial and imperial to metric for each category.
