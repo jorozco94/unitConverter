@@ -1,68 +1,90 @@
-body {
+*, *::before, *::after {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+:root {
+    --app-width: 550px;
+    --info-width: 480px;
+    --section-padding: 20px;
+    --std-border-radius: 4px;
+    --std-margin: 20px;
+    --std-button-padding: 12px;
+    --std-output-padding: 10px;
+    --input-font-size: 40px;
+    --subheading-font-size: 22px;
+
+    --input-bg-color: #6943FF;
+    --input-font-color: rgb(235, 233, 233);
+    --input-border-color: #B295FF;
+    --results-bg-color: #f4f4f4;
+    --results-font-color: #353535;
+    --subheading-color: #5A537B;
 }
 
 #container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 550px;
+    width: var(--app-width);
 }
 
 #top-cont {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #6943FF;
-    color: white;
-    padding: 20px;
-    width: 500px;
+    background-color: var(--input-bg-color);
+    color: var(--input-font-color);
+    padding: var(--section-padding);
+    width: var(--app-width);
 }
 
 input {
-    width: 80px;
+    width: var(--info-width);
     height: 60px;
-    border: 2px solid #B295FF;
-    border-radius: 2px;
-    background-color: #6943FF;
-    margin-bottom: 20px;
-    color: white;
-    font-size: 50px;
+    border: 2px solid var(--input-border-color);
+    border-radius: var(--std-border-radius);
+    background-color: var(--input-bg-color);
+    margin-bottom: var(--std-margin);
+    color: var(--input-font-color);
+    font-size: var(--input-font-size);
     font-weight: bold;
     text-align: center;
 }
 
 button {
     border: none;
-    padding: 12px 18px;
-    border-radius: 4px;
-    margin-bottom: 20px;
+    padding: var(--std-button-padding) calc(var(--std-button-padding) * 1.5);
+    border-radius: var(--std-border-radius);
+    margin-bottom: var(--std-margin);
 }
 
 #bottom-cont {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f4f4f4;
-    padding: 20px;
-    width: 500px;
+    background-color: var(--results-bg-color);
+    padding: var(--section-padding);
+    width: var(--app-width);
 }
 
 #bottom-cont h2 {
-    color: #5A537B;
-    font-size: 22px;
+    color: var(--subheading-color);
+    font-size: var(--subheading-font-size);
 }
 
 .output {
-    padding: 10px;
+    padding: var(--std-output-padding);
     text-align: center;
-    background-color: white;
-    width: 480px;
-    margin-top: 15px;
-    border-radius: 2px;
+    background-color: var(--input-font-color);
+    width: var(--info-width);
+    margin-top: var(--std-margin);
+    border-radius: var(--std-border-radius);
 }
 
 .output p {
-    color: #353535;
+    color: var(--results-font-color);
 }
