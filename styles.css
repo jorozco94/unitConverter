@@ -9,6 +9,7 @@
 :root {
     --app-width: 550px;
     --info-width: 480px;
+    --input-height: 60px;
     --section-padding: 20px;
     --std-border-radius: 4px;
     --std-margin: 20px;
@@ -44,7 +45,7 @@
 
 input {
     width: var(--info-width);
-    height: 60px;
+    height: var(--input-height);
     border: 2px solid var(--input-border-color);
     border-radius: var(--std-border-radius);
     background-color: var(--input-bg-color);
