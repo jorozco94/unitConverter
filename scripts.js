@@ -1,21 +1,11 @@
 // lay out input element and button element
 const inputEl = document.querySelector(".measure");
 const buttonEl = document.querySelector(".converter");
-// lay out element for each output
-const lengthEl = document.querySelector(".length");
-const volEl = document.querySelector(".vol");
-const massEl = document.querySelector(".mass");
-const elArr = [lengthEl, volEl, massEl];
 
 // grabbing elements that contain output values that need to be updated once conversion happens
 const beginningValues = document.querySelectorAll(".usr-val")
 const firstOutputValues = document.querySelectorAll(".first-conv")
 const secondOutputValues = document.querySelectorAll(".second-conv")
-
-// conversion factors for each measure type
-const lengthConvFactor = 3.281;
-const volConvFactor = .264;
-const massConvFactor = 2.204;
 
 // functionality for our convertor button
 buttonEl.addEventListener("click", function() {
@@ -28,7 +18,20 @@ buttonEl.addEventListener("click", function() {
     })
 
     // update output spans to contain the #'s we're converting to (imperial to metric)
-    firstOutputValues.forEach((value) => {
+    converter(numberToConvert, firstOutputValues, true);
+    // update output spans to contain the #'s we're converting to (metric to imperial)
+    converter(numberToConvert, secondOutputValues, false);
+})
+
+// conversion helper function - third parameter determines what conversion factor we use
+function converter(numberToConvert, output, impToMetric) {
+    // determining conversion factor based on if imp -> metric is true 
+    const lengthConvFactor = impToMetric ? 3.281 : 1 / 3.281;
+    const volConvFactor = impToMetric ? .264 : 1 / .264 ;
+    const massConvFactor = impToMetric ? 2.204 : 1 / 2.204;
+
+    // converting and updating text values conv factors have been set
+    output.forEach((value) => {
         if (value.classList.contains("len-out")) {
             value.textContent = `${(numberToConvert * lengthConvFactor).toFixed(3)}`
         } else if (value.classList.contains("vol-out")) {
@@ -37,15 +40,4 @@ buttonEl.addEventListener("click", function() {
             value.textContent = `${(numberToConvert * massConvFactor).toFixed(3)}`
         }
     })
-
-    // update output spans to contain the #'s we're converting to (metric to imperial)
-    secondOutputValues.forEach((value) => {
-        if (value.classList.contains("len-out")) {
-            value.textContent = `${(numberToConvert / lengthConvFactor).toFixed(3)}`
-        } else if (value.classList.contains("vol-out")) {
-            value.textContent = `${(numberToConvert / volConvFactor).toFixed(3)}`
-        } else {
-            value.textContent = `${(numberToConvert / massConvFactor).toFixed(3)}`
-        }
-    })
-})
+}
