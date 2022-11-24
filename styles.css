@@ -29,7 +29,7 @@ body {
     font-family: Arial, Helvetica, sans-serif
 }
 
-/* PPLICATION CONTAINER */
+/* APPLICATION CONTAINER */
 .app-container {
     display: flex;
     flex-direction: column;
@@ -63,6 +63,10 @@ input {
     text-align: center;
 }
 
+.inp-lbl {
+    padding: var(--std-button-padding)
+}
+
 button {
     border: none;
     padding: var(--std-button-padding) calc(var(--std-button-padding) * 1.5);
@@ -88,6 +92,7 @@ button:active {
 .bottom-cont h2 {
     color: var(--subheading-color);
     font-size: var(--subheading-font-size);
+    padding-bottom: calc(var(--std-output-padding) * 1.2)
 }
 
 .output {
