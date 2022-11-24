@@ -26,13 +26,17 @@
     --subheading-color: #5A537B;
 }
 
-.container {
+/* CSS FOR APPLICATION CONTAINER */
+.app-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: var(--app-width);
+    margin: var(--std-margin) auto;
+    border: 4px solid var(--results-font-color);
 }
 
+/* CSS FOR TOP/INPUT HALF OF APP */
 .top-cont {
     display: flex;
     flex-direction: column;
@@ -61,8 +65,14 @@ button {
     padding: var(--std-button-padding) calc(var(--std-button-padding) * 1.5);
     border-radius: var(--std-border-radius);
     margin-bottom: var(--std-margin);
+    cursor: pointer;
 }
 
+button:active {
+    font-style: italic;
+}
+
+/* CSS FOR BOTTOM/OUTPUT HALF OF APP */
 .bottom-cont {
     display: flex;
     flex-direction: column;
