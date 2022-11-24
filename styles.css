@@ -15,6 +15,7 @@
     --std-output-padding: 10px;
     --input-font-size: 40px;
     --subheading-font-size: 22px;
+    --alert-font-size: .8em;
 
     --input-bg-color: #6943FF;
     --input-font-color: rgb(235, 233, 233);
@@ -22,6 +23,7 @@
     --results-bg-color: #f4f4f4;
     --results-font-color: #353535;
     --subheading-color: #5A537B;
+    --alert-color: rgb(255, 8, 8)
 }
 
 body {
@@ -68,9 +70,9 @@ input {
 }
 
 .alert {
-    color: rgb(255, 8, 8);
+    color: var(--alert-color);
     font-weight: bold;
-    font-size: .8em;
+    font-size: var(--alert-font-size);
     padding-bottom: var(--std-button-padding)
 }
 
